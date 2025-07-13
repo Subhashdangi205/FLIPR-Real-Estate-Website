@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+
+<div style="
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 80px;
+  background-image: url('/static/img/herosection.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  position: relative;
+  color: white;
+">
+  >
+
+
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  "></div>
+
+
+  <div style="width: 50%; z-index: 1;">
+    <h1 style="font-size: 40px; font-weight: bold; line-height: 1.2;">
+      Consultation,<br>Design & Marketing
+    </h1>
+  </div>
+
+
+  <div
+    style="width: 25%; margin-right: 10px; background-color: #1e3c72; padding: 30px; border-radius: 10px; z-index: 1;">
+    <h3 style="margin-bottom: 20px;">Get a Free Consultation</h3>
+    <form method="POST" action="{% url 'submit_contact' %}">
+      {% csrf_token %}
+      <input type="text" name="full_name" placeholder="Full Name" required
+        style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+      <input type="email" name="email" placeholder="Email Address" required
+        style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+      <input type="text" name="mobile" placeholder="Mobile Number" required
+        style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+      <input type="text" name="city" placeholder="City" required
+        style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+      <button type="submit"
+        style="background-color: orange; padding: 10px 20px; border: none; color: white; border-radius: 5px;">Get
+        Quote</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- Not Your Average Realtor Section -->
+<section style="position: relative; padding: 64px 16px; background-color: white; overflow: hidden;">
+
+  <div
+    style="position: absolute; top: 24px; left: 40px; width: 16px; height: 16px; background-color: #3b82f6; border-radius: 9999px;">
+  </div>
+  <div
+    style="position: absolute; bottom: 40px; left: 20px; width: 8px; height: 8px; background-color: #fb923c; border-radius: 9999px;">
+  </div>
+  <div
+    style="position: absolute; top: 64px; right: 40px; width: 12px; height: 12px; background-color: #3b82f6; border-radius: 9999px;">
+  </div>
+
+
+  <div
+    style="max-width: 1200px; margin: auto; display: flex; flex-direction: row; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+
+
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="font-size: 28px; font-weight: bold; color: #1d4ed8; margin-bottom: 16px;">
+        Not Your Average Realtor
+      </h2>
+      <p style="color: #4b5563; font-size: 14px; line-height: 1.6;">
+        Real estate is not only our job, but our specialty. We provide
+        award-winning design, smart marketing, and amazing experiences
+        because we go far above and beyond what’s needed.
+      </p>
+    </div>
+
+
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+
+
+      <div style="display: flex; gap: 20px;">
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="agent1"
+          style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+
+        <img src="https://randomuser.me/api/portraits/women/34.jpg" alt="agent2"
+          style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+      </div>
+
+
+      <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="agent3"
+        style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Why Choose Me Section -->
+<section style="padding: 60px 20px; background-color: #f8f9fa; text-align: center;">
+  <h2 style="font-size: 32px; color: #0d6efd; margin-bottom: 40px;">Why Choose Me</h2>
+
+  <div style="position: relative; max-width: 1100px; margin: auto;">
+
+
+    <button onclick="slideLeft()"
+      style="position: absolute; top: 50%; left: -40px; transform: translateY(-50%); background: #0d6efd; color: white; border: none; border-radius: 50%; padding: 10px 12px; cursor: pointer; z-index: 1;">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+
+    <div id="slider" style="display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 10px;">
+
+      <div
+        style="min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+        <i class="fas fa-chart-line" style="font-size: 40px; color: #0d6efd; margin-bottom: 15px;"></i>
+        <h4 style="color: #0d6efd; margin-bottom: 10px;">Potential ROI</h4>
+        <p style="color: #555;">Maximize your returns with data-driven strategies tailored for your goals.</p>
+      </div>
+
+
+      <div
+        style="min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+        <i class="fas fa-pencil-ruler" style="font-size: 40px; color: #0d6efd; margin-bottom: 15px;"></i>
+        <h4 style="color: #0d6efd; margin-bottom: 10px;">Great Design</h4>
+        <p style="color: #555;">Modern, user-centric design that attracts and engages your ideal audience.</p>
+      </div>
+
+
+      <div
+        style="min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+        <i class="fas fa-bullhorn" style="font-size: 40px; color: #0d6efd; margin-bottom: 15px;"></i>
+        <h4 style="color: #0d6efd; margin-bottom: 10px;">Marketing</h4>
+        <p style="color: #555;">Smart, targeted marketing strategies to help your business grow.</p>
+      </div>
+
+
+      <div
+        style="min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+        <i class="fas fa-lightbulb" style="font-size: 40px; color: #0d6efd; margin-bottom: 15px;"></i>
+        <h4 style="color: #0d6efd; margin-bottom: 10px;">Creative Ideas</h4>
+        <p style="color: #555;">Bringing innovative and custom solutions tailored to your needs.</p>
+      </div>
+
+    </div>
+
+
+
+    <button onclick="slideRight()"
+      style="position: absolute; top: 50%; right: -40px; transform: translateY(-50%); background: #0d6efd; color: white; border: none; border-radius: 50%; padding: 10px 12px; cursor: pointer;">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
+
+
+<section style="padding: 60px 20px; background-color: #fff;">
+
+
+  <div
+    style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
+
+
+    <div style="transform: translateY(-40px);">
+      <img src="/static/img/about2.jpg" alt="Left Image" style="width: 220px; height: 220px; object-fit: cover;">
+    </div>
+
+
+    <div>
+      <img src="/static/img/about1.jpg" alt="Center Big Image" style="width: 300px; height: 300px; object-fit: cover;">
+    </div>
+
+
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+      <img src="/static/img/about3.jpeg" alt="Right Image 1" style="width: 200px; height: 200px; object-fit: cover;">
+
+    </div>
+
+  </div>
+
+
+  <h2 style="text-align: center; font-size: 36px; color: #0d6efd; font-weight: bold; margin-bottom: 10px;">About Us</h2>
+  <div style="width: 80px; height: 4px; background-color: #0d6efd; margin: 0 auto 30px auto; border-radius: 2px;"></div>
+
+
+  <p style="max-width: 800px; margin: auto; color: #555; font-size: 16px; line-height: 1.8; text-align: center;">
+    We specialize in delivering creative solutions that blend stunning design and strong marketing strategies to build
+    your brand and grow your business. Our team believes in innovation, transparency, and results.
+  </p>
+
+</section>
+<!-- Projects Section -->
+<section id="projects" style="padding: 60px 20px; background-color: #f0f0f0;">
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+
+
+    <h2 style="font-size: 32px; color: #0d6efd; margin-bottom: 10px;">Our Projects</h2>
+
+    <p style="color: #555; max-width: 700px; margin: auto; font-size: 16px;">
+      Explore our latest real estate projects that combine modern design with high ROI potential.
+    </p>
+    <p style="color: #555; max-width: 700px; margin: 10px auto 40px; font-size: 16px;">
+      Each project is tailored to client needs, focusing on location, aesthetics, and value.
+    </p>
+
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      {% for project in projects %}
+      <div
+        style="width: 300px; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <img src="{{ project.image.url }}" style="width: 100%; height: 200px; object-fit: cover;">
+        <div style="padding: 15px;">
+          <h3>{{ project.name }}</h3>
+          <p style="color: #555;">{{ project.description }}</p>
+          <button style="background: #0d6efd; color: white; border: none; padding: 8px 12px; border-radius: 5px;">Read
+            More</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Happy Clients Section -->
+<section id="testimonials" style="padding: 60px 20px; background-color: white;">
+  <div style="max-width: 1200px; margin: auto;">
+    <h2 style="text-align: center; color: #0d6efd; margin-bottom: 40px;">Happy Clients</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      {% for client in clients %}
+      <div style="width: 300px; text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+        <img src="{{ client.image.url }}" alt="Client Image"
+          style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+        <p style="font-style: italic; margin: 15px 0;">“{{ client.description }}”</p>
+        <strong style="color: #0d6efd;">{{ client.name }}</strong><br>
+        <small style="color: #777;">{{ client.designation }}</small>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Subscribe Section -->
+<div style="
+  background-image: url('/static/img/footer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  color:black;
+  position: relative;
+">
+
+
+  <!-- Content -->
+  <div style="position: relative; z-index: 2;">
+    <h2 style="font-size: 20px; margin: 0;">
+      Learn more about our listing process, as well as our<br>
+      Additional staging and design work
+    </h2>
+
+
+
+    <a href="#subscribe" style="
+      margin-top: 20px;
+      display: inline-block;
+      background-color: white;
+      color: #0d6efd;
+      padding: 10px 60px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    ">
+      Subscribe
+    </a>
+  </div>
+</div>
+
+
+
+<!-- Subscribe -->
+<div style="width: 100%; background-color: #0d6efd; color: white; padding: 30px 0;">
+  <div
+    style="max-width: 1200px; margin: auto; padding: 0 20px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px;">
+
+    <!-- Footer Links -->
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+      <a href="#" style="color: white; text-decoration: none;">Home</a>
+      <a href="#services" style="color: white; text-decoration: none;">Services</a>
+      <a href="#projects" style="color: white; text-decoration: none;">Projects</a>
+      <a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a>
+      <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
+    </div>
+
+    <!-- Subscribe Form with Label -->
+    <div style="display: flex; align-items: center; margin-left: 150px; gap: 10px; flex-wrap: wrap; justify-content: center;">
+      <span style="font-weight: bold;">Subscribe Us</span>
+      <form method="POST" action="{% url 'subscribe_newsletter' %}" style="display: flex; gap: 10px; flex-wrap: wrap;">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Enter Email" required
+          style="padding: 8px 12px; width: 180px; border-radius: 5px; border: none;">
+        <button type="submit"
+          style="background-color: white; color: #0d6efd; padding: 8px 16px; border: none; border-radius: 5px; font-weight: 600;">
+          Subscribe
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
